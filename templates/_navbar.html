@@ -1,0 +1,6 @@
+{% load i18n %}
+
+<li {% if request.path == "/whyus/" %}class="active"{% endif %}><a href="{% url 'why us' %}">{% trans "Why Us?" %}</a></li>
+<li {% if request.path == "/services/" %}class="active"{% endif %}><a href="{% url 'services' %}">{% trans "Our Services" %}</a></li>
+<li {% if request.path == "/portfolio/" %}class="active"{% endif %}><a href="{% url 'portfolio' %}">{% trans "Job Portfolio" %}</a></li>
+<li {% if request.path == "/about/" or request.path == "/contact/" %}class="active"{% endif %}><a href="{% url 'about' %}">{% trans "Contact Us" %}</a></li>

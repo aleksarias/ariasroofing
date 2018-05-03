@@ -1,0 +1,201 @@
+{% load staticfiles %}
+{% load thumbnail %}
+{% load i18n %}
+
+<!DOCTYPE html>
+<html lang="en">
+    
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Over 25 years of quality roofing services such as roof leak repairs, re-roofs, and more. Roof types:  shingle, metal, tile, TPO, rubber, silicone">
+    <meta name="keywords" content="Roofing, Dade, Miami, Metal, Shingle, Tile, leaks, repair, Fort, Lauderdale, contractor" />
+    <meta name="author" content="Alex Luis Arias">
+    <link rel="shortcut icon" href="{% static 'site/img/AR_logo_ COLOR web.png' %}">
+    <meta name="google-site-verification" content="G_-uCUpU_w1ekVcjOP6Xy7yIZto3VjDHKjl3KNIRkGc"/>
+
+    <meta property="og:url"                content="https://ariasroofing.com" />
+    <meta property="og:type"               content="website" />
+    <meta property="og:title"              content="Arias Roofing - South Florida's Roofing Company" />
+    <meta property="og:description"        content="Roof repairs and replacements done fast and easy" />
+    <meta property="og:image"              content="https://ariasroofing.com/static/site/img/landing_logo.png" />
+
+
+    <title>{% block title %} Arias Roofing :: {% endblock %}</title>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+{#    <!-- Optional theme -->#}
+{#    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">#}
+
+{#    <!-- Latest compiled and minified JavaScript -->#}
+{#    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>#}
+
+{#    <!-- Bootstrap core CSS -->#}
+{#    <link href="{% static 'bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">#}
+
+    <!-- Custom styles for this site -->
+    {% block styles %}
+    <link href="{% static 'site/css/main.css' %}" rel="stylesheet">
+    {% endblock styles %}
+
+    <!-- Custom tags for the head tag -->
+    {% block extrahead %}{% endblock extrahead %}
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+    <style>
+        li span { position: relative; left: -10px; }
+    </style>
+  </head>
+
+  <body>
+
+
+  <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-74063854-1', 'auto');
+      ga('send', 'pageview');
+
+  </script>
+
+
+    {% block navbar %}
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="{% url 'home' %}">
+            {% block navbar-brand %}
+                <img src="{% static 'site/img/AR_logo_ COLOR web.png' %}" alt="Arias Roofing Logo" height="37px" width="51px">
+{#              <img src="{% static 'site/img/logo.png' %}" alt="logo">#}
+              Arias Roofing
+            {% endblock %}
+          </a>
+        </div>
+        {% block navbar-menu %}
+        <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            {% block navbar-left %}
+
+                {% include '_navbar.html' %}
+
+            {% endblock %}
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            {% block navbar-right %}
+              {% if user.is_authenticated %}
+                {% if user.is_staff %}
+                <li><a href="{% url 'admin:index' %}">Admin</a></li>
+                {% endif %}
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle profile-menu" data-toggle="dropdown">
+			<img src="{% thumbnail user.profile.picture|default:'default_profile.png' 30x30 crop %}" alt="" />
+			{{ user.get_full_name|truncatechars:20 }}
+			<span class="caret"></span>
+		    </a>
+		    
+                  <ul class="dropdown-menu" role="menu">
+                    <li><a href="{% url 'landing' %}">Profile</a></li>
+                    <li><a href="{% url 'logout' %}">Logout</a></li>
+                  </ul>
+                </li>
+              {% endif %}
+            {% endblock %}
+          </ul>
+          </ul>
+        </div><!--/.nav-collapse -->
+        {% endblock %}
+    </div>
+    {% endblock navbar %}
+
+    {% block messages %}
+      {% if messages %}
+        {% for message in messages %}
+          <div class="alert alert-{{ message.tags }}">  <!-- singular -->
+            <a class="close" data-dismiss="alert">×</a>
+            {{ message|safe }}
+          </div>
+        {% endfor %}
+      {% endif %}
+    {% endblock %}
+
+    {% block splash %}
+    {% endblock splash %}
+    
+    {% block container %}
+    <div class="container">
+
+      <div class="starter-template">
+        <h1>New Project</h1>
+        <p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>
+      </div>
+
+    </div><!-- /.container -->
+    {% endblock container %}
+
+    <!-- Site footer -->
+{% block footer %}
+<!-- Some social button for contact will do -->
+<a name="contact"></a>
+    <div class="container">
+        <div class="footer">
+            <div class="row">
+                <div class="col-sm-2 text-center">
+                    <p>&copy; Arias Roofing {% now 'Y' %}</p>
+                </div>
+
+                <div class="col-sm-4 text-center">
+                    <div class="centerBlock">
+                        <table style="width: 250px; background-color: white; color: black;
+                        " cellpadding="0" cellspacing="0" align="center"><tr><td><a href="//www.angieslist.com/AngiesList/Review/4504622">
+                        <img src="//www.angieslist.com/webbadge/PurlImage.ashx?bid=b743453540e2a56ea2536be08fa310ea"
+                        alt="Read Unbiased Consumer Reviews Online at AngiesList.com" width="250" border="0" />
+                        </a></td></tr><tr><td align="center" style="color: black; font-family: arial, sans-serif;
+                        font-size: 12px;"><a href="//www.angieslist.com/AngiesList/Review/4504622" style="color: #006699;
+                    text-decoration: none;">angieslist.com/review/4504622</a></td></tr></table>
+                    </div>
+                </div>
+
+                <div class="col-sm-4 text-center">
+                <a target="_blank" title="BuildZoom Verified Badge" rel="nofollow" href="//www.buildzoom.com/contractor/arias-roofing"><img alt="BuildZoom Verified Badge" border="0" src="//d3flf7kkefqaeh.cloudfront.net/_assets/badge-03.png"></a>
+                </div>
+
+                <div class="col-sm-2 text-center">
+                    Connect with us on
+                    <a href="//www.facebook.com/Arias-Roofing-169505403060348"><i class="fa fa-facebook"></i> Facebook</a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+<!--     <script>
+         var profilepk = {{ user.customerprofile.pk }}
+    </script>
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script> -->
+    {% block scripts %}
+    {% endblock scripts %}
+
+  </body>
+</html>
+
+

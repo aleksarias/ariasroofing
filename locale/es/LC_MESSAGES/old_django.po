@@ -1,0 +1,149 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-03-02 02:39-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Language: es\n"
+"X-Source-Language: en\n"
+
+#: templates/_navbar.html:3 templates/whyus.html.py:42
+msgid "Why Us?"
+msgstr ""
+
+#: templates/_navbar.html:4 templates/services.html.py:8
+msgid "Our Services"
+msgstr ""
+
+#: templates/_navbar.html:5
+msgid "Job Portfolio"
+msgstr ""
+
+#: templates/_navbar.html:6 templates/about.html.py:7
+msgid "Contact Us"
+msgstr ""
+
+#: templates/about.html:19 templates/home.html.py:25
+msgid ""
+"Providing commercial and residential roofing services for South Florida for "
+"over 25 years"
+msgstr ""
+
+#: templates/about.html:62
+msgid "Our Location"
+msgstr ""
+
+#: templates/home.html:7
+msgid "Home"
+msgstr ""
+
+#: templates/home.html:27
+msgid "Call Today!"
+msgstr ""
+
+#: templates/home.html:29
+msgid "Or sign up for a free estimate"
+msgstr ""
+
+#: templates/landing.html:5
+msgid "Profile"
+msgstr ""
+
+#: templates/landing.html:12
+msgid "Welcome"
+msgstr ""
+
+#: templates/landing.html:23
+msgid "Mailing Address"
+msgstr ""
+
+#: templates/landing.html:26
+msgid "Update"
+msgstr ""
+
+#: templates/landing.html:28
+msgid "Account Summary"
+msgstr ""
+
+#: templates/landing.html:29
+msgid "Jobs"
+msgstr ""
+
+#: templates/landing.html:30
+msgid "Job ID:"
+msgstr ""
+
+#: templates/landing.html:31
+msgid "Address:"
+msgstr ""
+
+#: templates/landing.html:37
+msgid "Referrals"
+msgstr ""
+
+#: templates/landing.html:40
+msgid "Add New/Update"
+msgstr ""
+
+#: templates/portfolio.html:4 templates/portfolio.html.py:9
+msgid "Portfolio"
+msgstr ""
+
+#: templates/portfolio.html:13 templates/services.html.py:12
+msgid "Under Construction..."
+msgstr ""
+
+#: templates/services.html:4
+msgid "Services"
+msgstr ""
+
+#: templates/whyus.html:5
+msgid "Why Us"
+msgstr ""
+
+#: templates/whyus.html:46
+msgid ""
+"Arias Roofing has been providing quality roofing services for over 25 years. "
+"We are state licensed and fully insured."
+msgstr ""
+"Arias Roofing ha estado ofreciendo servicios de techos para más de 25 años. "
+"Estamos licensiados en el estado de la Florida y completamente asegurados."
+#: templates/whyus.html:48
+msgid ""
+"Nuestro objetivo es completar cada trabajo de la manera correcta: sin cortar esquinas y"
+"con la satisfacción 100% de cada cliente."
+msgstr ""
+""
+
+#: templates/whyus.html:50
+msgid "Our Story"
+msgstr "Nuestra Historia"
+
+#: templates/whyus.html:51
+msgid ""
+"Arias Roofing was started by a family of Cuban immigrants. They immigrated "
+"to Miami to establish a company based on the belief that when there is a "
+"free market with fierce competition everyone wins, customers and businesses."
+msgstr ""
+"Arias Roofing se empezó por una familia de inmigrantes cubanos. Ellos inmigraron"
+"a Miami para establecer una compañía basada en la creencia de que cuando hay un"
+" mercado libre con fuerte competencia todos ganamos, los clientes y las empresas."
+
+#: templates/whyus.html:53
+msgid ""
+"This what drives Arias Roofing to make sure the best service and most "
+"competitive prices are always being offered."
+msgstr ""

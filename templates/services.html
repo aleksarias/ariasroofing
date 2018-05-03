@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block title %}{{ block.super }} {%  trans "Services" %} {% endblock %}
+
+{% block container %}
+	<div class="profile-head">
+		<center><h1>{%  trans "Our Services" %}</h1></center>
+	</div>
+    <div class="container">
+    <div class="starter-template">
+        We offer all roofing services from new roofs to repairs. Estimates are free so please do not hesitate to request an estimate.<br>
+        Some of the services we offer are:<br>
+        <ul style="list-style-type:none">
+            <li><span>New shingle, tile, metal, and flat roofs</span></li>
+            <li><span>Leak repairs on any roof types</span></li>
+            <li><span>Cosmetic roof repairs</span></li>
+        </ul>
+        <br><br>
+            GAF is one of our primary choices for roofing materials. If you are looking for shingles for your new roof, GAF's <a href="http://www.gaf.com/Roofing/Residential/Virtual_Home_Remodeler">"virtual home remodler"</a> can help.<br>
+            <a href="http://www.gaf.com/Roofing/Residential/Virtual_Home_Remodeler">ClICK HERE</a> to go to their virtual tool.<br><br>
+            <a href="http://www.gaf.com/Roofing/Residential/Virtual_Home_Remodeler">
+            <img src="http://www.gaf.com/_Images/logo-GAF-main3.png" width="186" height="59" alt="GAF">
+            </a>
+        </div>
+    </div>
+{% endblock container %}
+
+</html>

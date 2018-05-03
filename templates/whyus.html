@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% load i18n %}
+
+{% block title %}{{ block.super }} {%  trans "Why Us" %} {% endblock %}
+
+
+{% block container %}
+
+<head>
+
+<style>
+* {
+  padding: 0;
+  margin: 0;
+}
+.fit {
+  max-width: 100%;
+  max-height: 100%;
+}
+.center {
+  display: block;
+  margin: auto;
+}
+</style>
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<script type="text/javascript" language="JavaScript">
+function set_body_height()
+{
+    var wh = $(window).width();
+    $('body').attr('style', 'width:' + wh + 'px;');
+}
+$(document).ready(function() {
+    set_body_height();
+    $(window).bind('resize', function() { set_body_height(); });
+});
+</script>
+
+</head>
+
+	<div class="profile-head">
+		<center><h1> {%  trans "Why Us?" %} </h1></center>
+	</div>
+    <div class="container">
+    <div class="starter-template">
+        {% trans "Arias Roofing has been providing quality roofing services for over 25 years. We are state licensed and fully insured." %}
+        <br> {% trans "We are proud to have a business primarily based on referrals from satisfied customers." %}
+        <br> {% trans "Our goal is to complete every job the right way: without cutting corners and completing the job to every customer's satisfaction." %}
+        <br><br>
+        <h3>{% trans "Our Story" %}</h3><br>
+        {% trans "Arias Roofing was started by a family of Cuban immigrants. They immigrated to Miami to establish a company based on the belief that when there is a free market with fierce competition everyone wins, customers and businesses." %}
+        <br>
+        {%  trans "This what drives Arias Roofing to make sure the best service and most competitive prices are always being offered." %}
+    </div>
+    </div>
+<img alt="Polaroid of Arias family starting roofing business in the 1990s." id="the_pic" class="center fit" src="{% static 'site/img/ariasrfg_history_colg.png' %}" >
+
+{% endblock container %}
+
+

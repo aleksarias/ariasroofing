@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block title %}{{ block.super }} {%  trans "Portfolio" %} {% endblock %}
+
+
+{% block container %}
+	<div class="profile-head">
+		<center><h1>{%  trans "Portfolio" %}</h1></center>
+	</div>
+    <div class="container">
+    <div class="starter-template">
+        <h1>{%  trans "Under Construction..." %}</h1>
+    </div>
+    </div>
+{% endblock container %}
+
+
+</html>
